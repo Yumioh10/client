@@ -4,7 +4,7 @@ export const mockProducts: Product[] = [
   {
     id: 'prod_001' as ProductId,
     name: 'Hyaluronic Recovery Serum',
-    category: 'post-treatment',
+    category: 'visage',
     price: 89.99,
     currency: 'Dh',
     images: [
@@ -34,7 +34,7 @@ export const mockProducts: Product[] = [
   {
     id: 'prod_002' as ProductId,
     name: 'Retinol 0.3% Night Treatment',
-    category: 'dermocosmetics',
+    category: 'visage',
     price: 124.5,
     currency: 'Dh',
     images: [
@@ -64,7 +64,7 @@ export const mockProducts: Product[] = [
   {
     id: 'prod_003' as ProductId,
     name: 'SPF 50+ Mineral Shield',
-    category: 'sun-care',
+    category: 'visage',
     price: 68.0,
     currency: 'Dh',
     images: [
@@ -94,7 +94,7 @@ export const mockProducts: Product[] = [
   {
     id: 'prod_004' as ProductId,
     name: 'Vitamin C 15% Brightening Booster',
-    category: 'dermocosmetics',
+    category: 'visage',
     price: 95.5,
     currency: 'Dh',
     images: [
@@ -119,7 +119,7 @@ export const mockProducts: Product[] = [
   {
     id: 'prod_005' as ProductId,
     name: 'Post-Botox Cooling Mask',
-    category: 'aesthetic',
+    category: 'visage',
     price: 156.0,
     currency: 'Dh',
     images: [
@@ -140,7 +140,7 @@ export const mockProducts: Product[] = [
   {
     id: 'prod_006' as ProductId,
     name: 'Glycolic Acid 10% Resurfacing Pads',
-    category: 'dermocosmetics',
+    category: 'dermocosmetique',
     price: 78.99,
     currency: 'Dh',
     images: [
@@ -161,7 +161,7 @@ export const mockProducts: Product[] = [
   {
     id: 'prod_007' as ProductId,
     name: 'Collagen Induction Cream',
-    category: 'post-treatment',
+    category: 'dermocosmetique',
     price: 134.0,
     currency: 'Dh',
     images: [
@@ -186,7 +186,7 @@ export const mockProducts: Product[] = [
   {
     id: 'prod_008' as ProductId,
     name: 'Chemical Peel Neutralizer',
-    category: 'aesthetic',
+    category: 'dermocosmetique',
     price: 89.0,
     currency: 'Dh',
     images: [
@@ -207,7 +207,7 @@ export const mockProducts: Product[] = [
   {
     id: 'prod_009' as ProductId,
     name: 'Zinc PCA Sebum Control',
-    category: 'dermocosmetics',
+    category: 'dermocosmetique',
     price: 52.5,
     currency: 'Dh',
     images: [
@@ -228,7 +228,7 @@ export const mockProducts: Product[] = [
   {
     id: 'prod_010' as ProductId,
     name: 'UVA/UVB Protection Lip Balm SPF 30',
-    category: 'sun-care',
+    category: 'visage',
     price: 24.99,
     currency: 'Dh',
     images: [
@@ -254,7 +254,7 @@ export const mockProducts: Product[] = [
   {
     id: 'prod_011' as ProductId,
     name: 'Post-Laser Barrier Cream',
-    category: 'post-treatment',
+    category: 'dermocosmetique',
     price: 112.0,
     currency: 'Dh',
     images: [
@@ -280,7 +280,7 @@ export const mockProducts: Product[] = [
   {
     id: 'prod_012' as ProductId,
     name: 'Mesotherapy Prep Solution',
-    category: 'aesthetic',
+    category: 'dermocosmetique',
     price: 67.5,
     currency: 'Dh',
     images: [

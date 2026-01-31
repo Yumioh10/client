@@ -4,6 +4,7 @@ import { useCartStore } from '@/store/cartStore'
 import { motion, AnimatePresence } from 'motion/react'
 import Logo from '@/assets/mapara-logo.svg'
 import { useState } from 'react'
+import { categories } from '@/data/mockCategories'
 
 export const Header = () => {
   const { itemCount } = useCartStore()
@@ -13,15 +14,7 @@ export const Header = () => {
 
   const onSearchChange = (value: string) => {
     setSearchQuery(value)
-  }
-
-  // Desktop menu items
-  const menuItems = [
-    { label: 'Produits', href: '/products' },
-    { label: 'Categories', href: '/categories' },
-    { label: 'A propos', href: '/about' },
-    { label: 'Contact', href: '/contact' },
-  ]
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-medical-white/95 backdrop-blur-sm border-b border-medical-gray">
@@ -91,48 +84,23 @@ export const Header = () => {
           className='border-t border-medical-gray bg-medical-white overflow-hidden'
         >
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4'>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-              {/* Navigation Links */}
-              <div className='md:col-span-2'>
-                <nav className='grid grid-cols-2 md:grid-cols-4 gap-4'>
-                  {menuItems.map((item) => (
-                    <Link
-                      key={item.label}
-                      to={item.href}
-                      className='py-3 px-4 text-medical-text hover:bg-medical-gray rounded-lg transition-colors font-medium text-center'
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
+            <div>
+              <h2 className='text-lg font-semibold text-medical-text mb-4'>Catégories</h2>
+              <nav className='grid grid-cols-2 md:grid-cols-4 gap-4'>
+                {categories.map((category) => (
+                  <Link
+                    key={category.id}
+                    to="/categories/$categoryId"
+                    params={{categoryId: category.id}}
+                    className='py-3 px-4 text-medical-text hover:bg-medical-gray rounded-lg transition-colors font-medium text-center'
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {category.name}
+                  </Link>
+                ))}
                 </nav>
               </div>
-
-              {/* Quick Actions / Account Info */}
-              <div className='border-t md:border-t-0 md:border-l border-medical-gray md:pl-6 pt-4 md:pt-0'>
-                <h3 className='font semibold text-medical-text mb-3'>Quick Actions</h3>
-                <div className='space-y-2'>
-                  <Link
-                    to="/account"
-                    className='flex items-center space-x-3 py-2 px-3 text-medical-text hover:bg-medical-gray rounded-lg transition-colors'
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <User className='w-5 h-5' />
-                    <span>Mon compte</span>
-                  </Link>
-                  <Link
-                    to="/cart"
-                    className='flex items-center space-x-3 py-2 px-3 text-medical-text hover:bg-medical-gray rounded-lg transition-colors'
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <ShoppingCart className='w-5 h-5' />
-                    <span>View Cart ({itemCount()})</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile Search - Only appears in menu on small screens */}
+              {/* Mobile Search - Only appears in menu on small screens */}
             <div className='mt-6 md:hidden'>
               <div className='relative'>
                 <Search className='absolute left-3 top-1/2 transform -translate-y-1/2 text-medical-text-secondary w-5 h-5' />
@@ -147,27 +115,18 @@ export const Header = () => {
         </motion.div>
       )}
     </AnimatePresence>
-    {/* Trust Badge Bar */}
-    <TrustBadgeBar />
+    {/* Banner Bar */}
+    <BannerBar />
   </header>
 );
 };
 
-const TrustBadgeBar = () => (
+const BannerBar = () => (
   <div className="bg-brand-primary/10 border-t border-medical-gray py-2">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-between space-x-8 text-sm text-medical-text-secondary">
+      <div className="flex justify-center space-x-8 text-sm text-medical-text-secondary font-semibold">
         <span className="flex items-center space-x-2">
-          <span className="w-2 h-2 bg-brand-secondary rounded-full"></span>
-          <span>Produits de soin Visage</span>
-        </span>
-        <span className="flex items-center space-x-2">
-          <span className="w-2 h-2 bg-brand-secondary rounded-full"></span>
-          <span>Produits de soin Cheveux</span>
-        </span>
-        <span className="flex items-center space-x-2">
-          <span className="w-2 h-2 bg-brand-secondary rounded-full"></span>
-          <span>Complements Alimentaires</span>
+          <span>Profitez de la livraison gratuite vers toutes les ville du Maroc dès 599 Dh d’achats.</span>
         </span>
       </div>
     </div>

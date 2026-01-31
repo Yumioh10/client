@@ -13,7 +13,7 @@ export type Currency = z.infer<typeof Currency>;
 export interface Product {
   id: ProductId;
   name: string;
-  category: 'dermocosmetics' | 'aesthetic' | 'post-treatment' | 'sun-care';
+  category: 'visage' | 'maquillage' | 'dermocosmetique' | 'hygiene&soins-quotidiens' | 'soins-corps' | 'soins-capillaires' | 'naturel-bio' | 'maman-bebe' | 'complement-alimentaire' | 'accessoires' |'soins-hommes' |'hiver-deals' ;
   price: number;
   currency: Currency;
   images: string[]; // External Unsplash URLs
